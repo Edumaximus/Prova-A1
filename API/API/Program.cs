@@ -63,10 +63,10 @@ app.MapPost("/tarefas/cadastrar", ([FromServices] AppDataContext ctx, [FromBody]
 });
 
 //PUT: http://localhost:5273/tarefas/alterar/{id}
-app.MapPut("/tarefas/alterar/{id}", ([FromServices] AppDataContext ctx, [FromRoute] string id) =>
+app.MapPut("/tarefas/alterar/{id}", ([FromServices] AppDataContext ctx,[FromBody] Tarefa tarefaAlterada, [FromRoute] string id) =>
 {
     Tarefa? tarefa = ctx.Tarefas.Find(id);
-    if (Tarefa is null)
+    if (tarefa is null)
     {
         return Results.
             NotFound("Tarefa não encontrada!");

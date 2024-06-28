@@ -4,7 +4,27 @@ import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div>
-      <h1>Projeto base em React com TypeScript</h1>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/pages/tarefa/listar"}>
+                Listar Tarefas{" "}
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<TarefaListar />} />
+          <Route
+            path="/pages/tarefa/listar"
+            element={<TarefaListar />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -12,9 +12,9 @@ function TarefaListar() {
 
   function carregarTarefas() {
 
-    fetch("http://localhost:5225/api/tarefa/listar")
+    fetch("http://localhost:5000/api/tarefas/listar")
       .then((resposta) => resposta.json())
-      .then((produtos: Tarefa[]) => {
+      .then((tarefas: Tarefa[]) => {
         console.table(tarefas);
         setTarefas(tarefas);
       });

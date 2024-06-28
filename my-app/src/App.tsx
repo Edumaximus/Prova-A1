@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import TarefaListar from "./components/pages/tarefa/tarefa-listar";
 
 function App() {
   return (
